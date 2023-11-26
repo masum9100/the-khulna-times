@@ -4,6 +4,7 @@ const Footer = () => {
     return (
         <div>
             foot
+            <img src="" alt="" />
         </div>
     );
 };
