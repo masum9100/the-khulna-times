@@ -5,7 +5,7 @@ import { FaFacebookF } from "react-icons/fa6";
 
 const Footer = () => {
     return (
-        <div className='bg-black'>
+        <div className='bg-black mt-10'>
             <footer className="footer p-5 text-white max-w-screen-xl mx-auto">
                 <nav>
                     <header className="footer-title">Services</header>

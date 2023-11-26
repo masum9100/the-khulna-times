@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import MainRoute from './MainRoute';
 import Home from '../HomePage/Home';
 import AllArticles from '../AllArticles/AllArticles';
+import Subscription from '../OtherPage/Subscription'
 
 const NotFound = () => {
     return (
@@ -24,7 +25,13 @@ const route = createBrowserRouter([
             {
                 path: '/all-articles',
                 element: <AllArticles></AllArticles>
-            }
+            },
+            {
+                path: '/subscription',
+                element: <Subscription></Subscription>
+            },
+            
+            
         ]
     }
     
