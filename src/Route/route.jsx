@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import MainRoute from './MainRoute';
 import Home from '../HomePage/Home';
+import AllArticles from '../AllArticles/AllArticles';
 
 const NotFound = () => {
     return (
@@ -19,6 +20,10 @@ const route = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/all-articles',
+                element: <AllArticles></AllArticles>
             }
         ]
     }
