@@ -4,6 +4,7 @@ import MainRoute from './MainRoute';
 import Home from '../HomePage/Home';
 import Subscription from '../OtherPage/Subscription'
 import AllArticle from '../OtherPage/AllArticle';
+import PremiumArticle from '../OtherPage/PremiumArticle';
 
 const NotFound = () => {
     return (
@@ -30,6 +31,10 @@ const route = createBrowserRouter([
                 path: '/subscription',
                 element: <Subscription></Subscription>
             },
+            {
+                path: '/premium-article',
+                element: <PremiumArticle></PremiumArticle>
+            }
             
             
             

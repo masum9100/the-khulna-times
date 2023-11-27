@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import AllArticleOne from './AllArticleOne';
+import { Helmet } from 'react-helmet-async';
 
 const AllArticle = () => {
     const [originalNews, setOriginalNews] = useState([]);
@@ -29,6 +30,9 @@ const AllArticle = () => {
     
     return (
         <div>
+            <Helmet>
+                <title>The Khulna News | All Article</title>
+            </Helmet>
             <div className="hero my-5" style={{ backgroundImage: 'url(https://i.ibb.co/1q2MT8H/collection-newspapers.webp)' }}>
                 <div className="hero-overlay bg-opacity-80"></div>
                 <div className="hero-content text-center text-neutral-content">

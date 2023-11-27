@@ -4,6 +4,7 @@ import HomeSubscription from './HomeSubscription';
 import HomePublisher from './HomePublisher';
 import Banner from './Banner';
 import HomeStatistic from './HomeStatistic';
+import { Helmet } from 'react-helmet-async';
 
 
 const Home = () => {
@@ -12,7 +13,9 @@ const Home = () => {
     return (
 
         <div>
-            
+            <Helmet>
+                <title>The Khulna News | Home</title>
+            </Helmet>
             <Banner></Banner>
             <div className='max-w-screen-xl mx-auto lg:flex'>
                 <div className='lg:w-3/4 px-4'>

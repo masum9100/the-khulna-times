@@ -4,10 +4,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination, } from 'swiper/modules';
 
-const AllArticleOne = ({ item }) => {
+const PremiumOne = ({item}) => {
     const { NewsTitle, ShortDescription, PublisherName, PublishedDate, Image1, Image2, Package } = item
-
-
     return (
         <div className='max-w-screen-lg mx-auto '>
             
@@ -46,4 +44,4 @@ const AllArticleOne = ({ item }) => {
     );
 };
 
-export default AllArticleOne;
+export default PremiumOne;

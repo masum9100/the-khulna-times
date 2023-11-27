@@ -1,7 +1,9 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Subscription = () => {
     return (
+        
         <div className='bg-gradient-to-b from-[#F9F4FC] to-[#EEE8FB] my-10 pb-10'>
             <div className='max-w-screen-xl mx-auto'>
                 <div className='text-center py-10'>
@@ -178,6 +180,9 @@ const Subscription = () => {
                     </div>
                 </div>
             </div>
+            <Helmet>
+                <title>The Khulna News | Subscription</title>
+            </Helmet>
         </div>
     );
 };
