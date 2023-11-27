@@ -3,6 +3,7 @@ import HomeNews from './HomeNews';
 import HomeSubscription from './HomeSubscription';
 import HomePublisher from './HomePublisher';
 import Banner from './Banner';
+import HomeStatistic from './HomeStatistic';
 
 
 const Home = () => {
@@ -18,6 +19,10 @@ const Home = () => {
                 </div>
                 <div className='lg:w-1/4'>
                     <HomePublisher></HomePublisher>
+                    <div className='w-1/2 md:w-3/4 mx-auto my-4 bg-gray-900 h-2'>
+                        <hr />
+                    </div>
+                    <HomeStatistic></HomeStatistic>
                     <div className='w-1/2 md:w-3/4 mx-auto my-4 bg-gray-900 h-2'>
                         <hr />
                     </div>
