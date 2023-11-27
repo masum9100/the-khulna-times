@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import HomeNews from './HomeNews';
 import HomeSubscription from './HomeSubscription';
 import HomePublisher from './HomePublisher';
@@ -12,6 +12,7 @@ const Home = () => {
     return (
 
         <div>
+            
             <Banner></Banner>
             <div className='max-w-screen-xl mx-auto lg:flex'>
                 <div className='lg:w-3/4 px-4'>
@@ -29,6 +30,8 @@ const Home = () => {
                     <HomeSubscription></HomeSubscription>
                 </div>
             </div>
+
+
         </div>
     );
 };

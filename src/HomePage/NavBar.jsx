@@ -25,7 +25,7 @@ const NavBar = () => {
     return (
         <div className='max-w-screen-xl mx-auto px-5'>
             <div className=' grid justify-center md:flex md:justify-between items-center'>
-                <div className='text-center'>
+                <div className='text-center w-24'>
                     <p>{twelveHourTime}</p>
                     <p>{formattedDate}</p>
                 </div>

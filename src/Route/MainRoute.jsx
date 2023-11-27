@@ -6,6 +6,7 @@ import { Outlet } from 'react-router-dom';
 const MainRoute = () => {
     return (
         <div>
+            
             <NavBar></NavBar>
             <Outlet></Outlet>
             <Footer></Footer>

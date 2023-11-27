@@ -11,7 +11,8 @@
     "Image1": "https://i.ibb.co/sqGFqH9/Artboard-1.jpg",
     "Image2": "https://i.ibb.co/g9zk8hg/Artboard-1.jpg",
     "BackgroundImage": "https://i.ibb.co/dBDDzKz/Artboard-1.jpg",
-    "Package": "free"
+    "Package": "free",
+    "tag":"Economy"
   },
   {
     "NewsTitle": "Watching People Watch a Game. With 100,000 Friends.",
@@ -25,7 +26,8 @@
     "Image1": "https://i.ibb.co/LS4fL7v/Artboard-2.jpg",
     "Image2": "https://i.ibb.co/YNyCb6C/Artboard-2.jpg",
     "BackgroundImage": "https://i.ibb.co/nryyLq7/Artboard-2.jpg",
-    "Package": "free"
+    "Package": "free",
+    "tag":"Entertainment"
   },
   {
     "NewsTitle": "David who? Meet the Air Force Reserve major who is the latest candidate making an entry in 2024",
@@ -39,7 +41,8 @@
     "Image1": "https://i.ibb.co/FqHKtwC/Artboard-3.jpg",
     "Image2": "https://i.ibb.co/MGNXQcz/Artboard-3.jpg",
     "BackgroundImage": "https://i.ibb.co/RNM6Bnm/Artboard-3.jpg",
-    "Package": "premium"
+    "Package": "premium",
+    "tag":"Politics"
   },
   {
     "NewsTitle": "DeSantis is racking up big endorsements in Iowa. But Trump rallygoers are unimpressed.",
@@ -53,7 +56,8 @@
     "Image1": "https://i.ibb.co/Fx8c6DZ/Artboard-4.jpg",
     "Image2": "https://i.ibb.co/T1668QP/Artboard-4.jpg",
     "BackgroundImage": "https://i.ibb.co/NZpbKNp/Artboard-4.jpg",
-    "Package": "premium"
+    "Package": "premium",
+    "tag":"Politics"
   },
   {
     "NewsTitle": "Donald Trump slams Iowa Gov. Reynolds as 'most unpopular governor' in continued feud",
@@ -67,7 +71,8 @@
     "Image1": "https://i.ibb.co/r3kbLbb/Artboard-5.jpg",
     "Image2": "https://i.ibb.co/0KQzyqm/Artboard-5.jpg",
     "BackgroundImage": "https://i.ibb.co/Ln0rWYB/Artboard-5.jpg",
-    "Package": "free"
+    "Package": "free",
+    "tag":"Politics"
   },
   {
     "NewsTitle": "Stakes are clear for Michigan: Beat Ohio State or be labeled a gigantic fraud",
@@ -81,7 +86,8 @@
     "Image1": "https://i.ibb.co/DR1ZPpj/Artboard-6.jpg",
     "Image2": "https://i.ibb.co/hyxr76D/Artboard-6.jpg",
     "BackgroundImage": "https://i.ibb.co/GcbfK4w/Artboard-6.jpg",
-    "Package": "premium"
+    "Package": "premium",
+    "tag":"Sports"
   },
   {
     "NewsTitle": "South Carolina basketball sets program record in 101-19 rout of Mississippi Valley State",
@@ -95,7 +101,8 @@
     "Image1": "https://i.ibb.co/60NBPbC/Artboard-7.jpg",
     "Image2": "https://i.ibb.co/sgCpL0q/Artboard-7.jpg",
     "BackgroundImage": "https://i.ibb.co/Qcm7h8L/Artboard-7.jpg",
-    "Package": "premium"
+    "Package": "premium",
+    "tag":"Sports"
   },
   {
     "NewsTitle": "Will Messi, Ronaldo meet again? Inter Miami denies scheduling match with Al-Nassr",
@@ -109,7 +116,8 @@
     "Image1": "https://i.ibb.co/Mpm4CGp/Artboard-8.jpg",
     "Image2": "https://i.ibb.co/yWWVHv5/Artboard-8.jpg",
     "BackgroundImage": "https://i.ibb.co/WG4VzX1/Artboard-8.jpg",
-    "Package": "free"
+    "Package": "free",
+    "tag":"Sports"
   },
   {
     "NewsTitle": "'Too fat for cinema': Ridley Scott teases 'Napoleon' extended cut to stream on Apple TV+",
@@ -123,7 +131,8 @@
     "Image1": "https://i.ibb.co/TqXR6qB/Artboard-9.jpg",
     "Image2": "https://i.ibb.co/6HdgKPT/Artboard-9.jpg",
     "BackgroundImage": "https://i.ibb.co/cYVyNVC/Artboard-9.jpg",
-    "Package": "premium"
+    "Package": "premium",
+    "tag":"Entertainment"
   },
   {
     "NewsTitle": "Taylor Swift's surprise songs in São Paulo. Which songs does she have left for Eras tour?",
@@ -137,7 +146,8 @@
     "Image1": "https://i.ibb.co/YkDvzSZ/Artboard-10.jpg",
     "Image2": "https://i.ibb.co/hgwm1CF/Artboard-10.jpg",
     "BackgroundImage": "https://i.ibb.co/0jjfJT4/Artboard-10.jpg",
-    "Package": "free"
+    "Package": "free",
+    "tag":"Entertainment"
   },
   {
     "NewsTitle": "Dolly Parton's cheerleader outfit can teach us all a lesson on ageism",
@@ -151,7 +161,8 @@
     "Image1": "https://i.ibb.co/WfhFqxL/Artboard-11.jpg",
     "Image2": "https://i.ibb.co/QcMYbgX/Artboard-11.jpg",
     "BackgroundImage": "https://i.ibb.co/q1tgbyv/Artboard-11.jpg",
-    "Package": "free"
+    "Package": "free",
+    "tag":"Entertainment"
   },
   {
     "NewsTitle": "It's holiday cookie baking season: Try these expert tips to make healthy cookies.",
@@ -165,7 +176,8 @@
     "Image1": "https://i.ibb.co/KKdX3FG/Artboard-12.jpg",
     "Image2": "https://i.ibb.co/k44W4Cy/Artboard-12.jpg",
     "BackgroundImage": "https://i.ibb.co/D5GMRTB/Artboard-12.jpg",
-    "Package": "premium"
+    "Package": "premium",
+    "tag":"LifeStye"
   },
   {
     "NewsTitle": "When do babies typically start walking? How to help them get there.",
@@ -179,7 +191,8 @@
     "Image1": "https://i.ibb.co/HTPS9QQ/Artboard-13.jpg",
     "Image2": "https://i.ibb.co/k100gfV/Artboard-13.jpg",
     "BackgroundImage": "https://i.ibb.co/MVFQxQn/Artboard-13.jpg",
-    "Package": "free"
+    "Package": "free",
+    "tag":"LifeStye"
   },
   {
     "NewsTitle": "Could IonQ become the next Nvidia?",
@@ -193,7 +206,8 @@
     "Image1": "https://i.ibb.co/7jYcgh7/Artboard-14.jpg",
     "Image2": "https://i.ibb.co/2d2gmmD/Artboard-14.jpg",
     "BackgroundImage": "https://i.ibb.co/Tg4hj4h/Artboard-14.jpg",
-    "Package": "premium"
+    "Package": "premium",
+    "tag":"Technology"
   },
   {
     "NewsTitle": "These artificial intelligence (AI) stocks are better buys than Nvidia",
@@ -207,7 +221,8 @@
     "Image1": "https://i.ibb.co/rM5JLZT/Artboard-15.jpg",
     "Image2": "https://i.ibb.co/pdz5Hnr/Artboard-15.jpg",
     "BackgroundImage": "https://i.ibb.co/WDSfT8R/Artboard-15.jpg",
-    "Package": "free"
+    "Package": "free",
+    "tag":"Technology"
   },
   {
     "NewsTitle": "More hostages expected to be freed; 2nd day of Israel-Hamas temporary cease-fire: Updates",
@@ -221,7 +236,8 @@
     "Image1": "https://i.ibb.co/42xB07t/Artboard-16.jpg",
     "Image2": "https://i.ibb.co/dQMkD3B/Artboard-16.jpg",
     "BackgroundImage": "https://i.ibb.co/crTW2JJ/Artboard-16.jpg",
-    "Package": "free"
+    "Package": "free",
+    "tag":"International"
   },
   {
     "NewsTitle": "See the iconic Florida manatees as they keep fighting for survival",
@@ -235,7 +251,8 @@
     "Image1": "https://i.ibb.co/qFkbLGs/Artboard-17.jpg",
     "Image2": "https://i.ibb.co/vHhDH1T/Artboard-17.jpg",
     "BackgroundImage": "https://i.ibb.co/cJdQcBr/Artboard-17.jpg",
-    "Package": "premium"
+    "Package": "premium",
+    "tag":"Environment"
   },
   {
     "NewsTitle": "Is Trump right about World War III? Here's why we should be worried.",
@@ -249,7 +266,8 @@
     "Image1": "https://i.ibb.co/k2smwkv/Artboard-18.jpg",
     "Image2": "https://i.ibb.co/34qXsMQ/Artboard-18.jpg",
     "BackgroundImage": "https://i.ibb.co/8xQBKWz/Artboard-18.jpg",
-    "Package": "premium"
+    "Package": "premium",
+    "tag":"Politics"
   },
   {
     "NewsTitle": "Fatal crashes reported; snow forecast: Thanksgiving holiday weekend travel safety news",
@@ -263,7 +281,8 @@
     "Image1": "https://i.ibb.co/ngQpPB0/Artboard-19.jpg",
     "Image2": "https://i.ibb.co/rMmY8Cw/Artboard-19.jpg",
     "BackgroundImage": "https://i.ibb.co/FKDRYcR/Artboard-19.jpg",
-    "Package": "free"
+    "Package": "free",
+    "tag":"Environment"
   },
   {
     "NewsTitle": "King Charles honors Blackpink for environmental efforts",
@@ -277,6 +296,7 @@
     "Image1": "https://i.ibb.co/ZVTdZ6V/Artboard-20.jpg",
     "Image2": "https://i.ibb.co/x3V5hvV/Artboard-20.jpg",
     "BackgroundImage": "https://i.ibb.co/RvVFsgC/Artboard-20.jpg",
-    "Package": "free"
+    "Package": "free",
+    "tag":"Entertainment"
   }
 ]
