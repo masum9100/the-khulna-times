@@ -1,20 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import HomeOneNews from './HomeOneNews';
+import useNews from '../Hooks/useNews';
 
 const HomeNews = () => {
-    const [news, setNews] = useState([])
-    useEffect(() => {
-        fetch('data.json')
-            .then(res => res.json())
-            .then(data => {
-                const filteredData = data.filter(item => item.Package === "free");
-                setNews(filteredData.slice(0, 9));
-            })
-    }, [])
+    
+    const [news] = useNews()
+    const freeNews = news.filter(item => item.Package === "free").slice(0, 9)
+    
     return (
         <div>
             {
-                news.map(item => <HomeOneNews
+                freeNews.map(item => <HomeOneNews
                     key={item.NewsTitle}
                     item={item}></HomeOneNews>)
             }

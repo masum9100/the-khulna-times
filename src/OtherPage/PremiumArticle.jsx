@@ -1,18 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import PremiumOne from './PremiumOne';
+import useNews from '../Hooks/useNews';
 
 const PremiumArticle = () => {
 
-    const [news, setNews] = useState([])
-    useEffect(() => {
-        fetch('data.json')
-            .then(res => res.json())
-            .then(data => {
-                const filteredData = data.filter(item => item.Package === "premium");
-                setNews(filteredData);
-            })
-    }, [])
+    const [news] = useNews()
+    const premiumNews = news.filter(item => item.Package === "premium")
 
     return (
         <div>
@@ -29,7 +23,7 @@ const PremiumArticle = () => {
                 </div>
             </div>
             {
-                news.map(item => <PremiumOne
+                premiumNews.map(item => <PremiumOne
                     key={item.NewsTitle}
                     item={item}></PremiumOne>)
             }
