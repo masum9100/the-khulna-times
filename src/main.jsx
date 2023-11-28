@@ -4,11 +4,14 @@ import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import route from './Route/route'
 import { HelmetProvider } from 'react-helmet-async';
+import AuthProvider from './FirebaseAuth/AuthProvider'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HelmetProvider>
-      <RouterProvider router={route}></RouterProvider>
-    </HelmetProvider>
+    <AuthProvider>
+      <HelmetProvider>
+        <RouterProvider router={route}></RouterProvider>
+      </HelmetProvider>
+    </AuthProvider>
   </React.StrictMode>,
 )

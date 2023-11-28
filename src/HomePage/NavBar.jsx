@@ -1,12 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Marquee from "react-fast-marquee";
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../FirebaseAuth/AuthProvider';
 
 
 const NavBar = () => {
 
 
     const [time, setTime] = useState(new Date())
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogout = () => {
+        logOut().then()
+    }
 
     useEffect(() => {
         const interval = setInterval(() => setTime(new Date()), 1000);
@@ -32,8 +38,18 @@ const NavBar = () => {
                 <div>
                     <img className='max-w-xs md:max-w-md lg:max-w-lg' src="logo.png" alt="" />
                 </div>
-                <div className='text-center'>
-                    <NavLink to={'/login'}><button className='btn btn-primary'>LogIn</button></NavLink>
+                <div className='text-center flex'>
+                    <div>
+                        {user && <div className='grid grid-cols-1 justify-center'>
+                            <img className='w-8 rounded-full mx-auto' src={user?.photoURL} alt="user" />
+                            <p className="mr-1 text-black">{user?.email}</p>
+                        </div>}
+                    </div>
+
+                    <div>
+                        {user && <button onClick={handleLogout} className="btn btn-error">Log Out</button>}
+                        {!user && <NavLink to="/login"><button className="btn btn-primary">LogIn</button></NavLink>}
+                    </div>
                 </div>
             </div>
 

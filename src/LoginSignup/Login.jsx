@@ -1,16 +1,54 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../FirebaseAuth/AuthProvider';
+import { Helmet } from 'react-helmet-async';
+import Swal from 'sweetalert2';
 
 
 
 const Login = () => {
+    const { signIn, googleSignIn } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+    const [error, setError]=useState("")
 
-    
+    const handleGoogle = () => {
+        googleSignIn().then(result => {
+            console.log(result.user)
+            navigate(location?.state ? location.state : '/')
+        })
+    }
 
+
+
+    const handleLogIn = event => {
+        event.preventDefault()
+        const form = event.target
+        const email = form.email.value
+        const password = form.password.value
+        console.log(email, password)
+        signIn(email, password)
+            .then(result => {
+                console.log(result.user)
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "You Logged In Successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                navigate(location?.state?location.state : '/')
+            }) .catch ((err)=>{
+                setError("Invalid email or password")
+            })
+    }
 
 
     return (
         <div className='mt-10'>
+            <Helmet>
+                <title>The Khulna News | SignIn</title>
+            </Helmet>
 
             <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/Cz2fRSH/girl-791231-1280.jpg)' }}>
                 <div className="hero-overlay bg-opacity-80"></div>
@@ -20,16 +58,16 @@ const Login = () => {
                     <div className="max-w-md">
                         <div className=' py-10'>
                             <div className=" w-full mx-auto p-10 ">
-                                <img src="/logow.png" alt=""  className='my-10'/>
+                                <img src="/logow.png" alt="" className='my-10' />
                                 <h1 className="text-3xl text-white font-extrabold mb-5">Sign In to Your Account</h1>
-                                <form className="">
-                                    {/* <p className='text-red-500'>{error}</p> */}
+                                <form className="" onSubmit={handleLogIn}>
+                                    <p className='text-red-500'>{error}</p>
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text text-white">Email</span>
                                         </label>
 
-                                        <input  type="email" placeholder="email" name="email" className="input input-bordered text-[#4A00FF]" required />
+                                        <input type="email" placeholder="email" name="email" className="input input-bordered text-[#4A00FF]" required />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
@@ -41,10 +79,11 @@ const Login = () => {
                                         </label>
                                     </div>
                                     <div className="form-control mt-6">
-                                        <button className=" py-2 rounded-md bg-[#4A00FF] text-white">Sign In</button>
+
+                                        <input type="submit" value="Sign In" className=" py-2 rounded-md bg-[#4A00FF] text-white" />
                                     </div>
                                     <div>
-                                        <button className="flex justify-center items-center mx-auto mt-10 bg-white rounded-full px-8 py-4 text-black">
+                                        <button onClick={handleGoogle} className="flex justify-center items-center mx-auto mt-10 bg-white rounded-full px-8 py-4 text-black">
                                             <svg width="24" height="25" viewBox="0 0 46 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M45.1381 17.9527H43.3399V17.86H23.2474V26.79H35.8643C34.0236 31.9884 29.0775 35.72 23.2474 35.72C15.85 35.72 9.85236 29.7224 9.85236 22.325C9.85236 14.9276 15.85 8.93 23.2474 8.93C26.662 8.93 29.7685 10.2182 32.1338 12.3223L38.4485 6.00766C34.4612 2.29166 29.1278 0 23.2474 0C10.9184 0 0.922363 9.99602 0.922363 22.325C0.922363 34.654 10.9184 44.65 23.2474 44.65C35.5763 44.65 45.5724 34.654 45.5724 22.325C45.5724 20.8281 45.4183 19.3669 45.1381 17.9527Z" fill="#FFC107" />
                                                 <path d="M3.49633 11.9338L10.8312 17.313C12.8159 12.3993 17.6226 8.93 23.2474 8.93C26.662 8.93 29.7685 10.2182 32.1338 12.3223L38.4485 6.00766C34.4612 2.29166 29.1278 0 23.2474 0C14.6723 0 7.23577 4.84118 3.49633 11.9338Z" fill="#FF3D00" />
