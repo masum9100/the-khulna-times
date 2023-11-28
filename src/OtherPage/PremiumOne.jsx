@@ -5,12 +5,12 @@ import 'swiper/css/pagination';
 import { Autoplay, Pagination, } from 'swiper/modules';
 import { NavLink } from 'react-router-dom';
 
-const PremiumOne = ({item}) => {
-    const {_id, NewsTitle, ShortDescription, PublisherName, PublishedDate, Image1, Image2, Package } = item
+const PremiumOne = ({ item }) => {
+    const { _id, NewsTitle, ShortDescription, PublisherName, PublishedDate, Image1, Image2, Package } = item
     return (
         <div className='max-w-screen-lg mx-auto '>
-            
-            <div  className='flex justify-center p-4 border-black border-2 my-2'>
+
+            <div className='flex justify-center p-4 border-black border-2 my-2'>
                 <div>
                     <h1 className='text-2xl font-bold'>{NewsTitle}</h1>
                     <p className='text-gray-500'>{ShortDescription}</p>

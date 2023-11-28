@@ -33,7 +33,7 @@ const NavBar = () => {
                     <img className='max-w-xs md:max-w-md lg:max-w-lg' src="logo.png" alt="" />
                 </div>
                 <div className='text-center'>
-                    <button className='btn btn-primary'>LogIn</button>
+                    <NavLink to={'/login'}><button className='btn btn-primary'>LogIn</button></NavLink>
                 </div>
             </div>
 
