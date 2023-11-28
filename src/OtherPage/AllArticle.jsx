@@ -10,20 +10,64 @@ const AllArticle = () => {
     
     const [news] = useNews()
     const [tabIndex, setTabIndex] = useState(0)
+    const [searchQuery, setSearchQuery] = useState('');
+    const [filteredArticles, setFilteredArticles] = useState([]);
 
-    const economy = news.filter(item => item.tag === 'Economy')
-    const entertainment = news.filter(item => item.tag === 'Entertainment')
-    const politics = news.filter(item => item.tag === 'Politics')
-    const sports = news.filter(item => item.tag === 'Sports')
-    const lifeStye = news.filter(item => item.tag === 'LifeStye')
-    const technology = news.filter(item => item.tag === 'Technology')
-    const international = news.filter(item => item.tag === 'International')
-    const environment = news.filter(item => item.tag === 'Environment')
-    const all = news
 
-    
+    useEffect(() => {
+        if (tabIndex === 0) {
+            const filtered = news.filter(
+                (item) =>
+                    item.NewsTitle.toLowerCase().includes(searchQuery.toLowerCase())
+            );
+            setFilteredArticles(filtered);
+        }
+    }, [searchQuery, tabIndex, news]);
 
-    
+    const filterByTag = (tag) => {
+        return news.filter((item) => item.tag === tag);
+    };
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        setSearchQuery(e.target.search.value);
+    };
+
+    const all = filteredArticles.length > 0 ? filteredArticles : news;
+
+    const getArticlesByTab = (index) => {
+        switch (index) {
+            case 0:
+                return <TabArticle items={all} />;
+            case 1:
+                return <TabArticle items={filterByTag('Economy')} />;
+            case 2:
+                return <TabArticle items={filterByTag('Entertainment')} />;
+            
+            case 3:
+                return <TabArticle items={filterByTag('Politics')} />;
+            
+            case 4:
+                return <TabArticle items={filterByTag('Sports')} />;
+            
+            case 5:
+                return <TabArticle items={filterByTag('LifeStye')} />;
+            
+            case 6:
+                return <TabArticle items={filterByTag('Technology')} />;
+            
+            case 7:
+                return <TabArticle items={filterByTag('International')} />;
+            case 8:
+                return <TabArticle items={filterByTag('Environment')} />;
+            default:
+                return null;
+        }
+    };
+
+    // const economy = news.filter(item => item.tag === 'Economy')
+    // const all = news
+
 
     return (
         <div>
@@ -36,7 +80,7 @@ const AllArticle = () => {
                 <div className="hero-content text-center text-neutral-content">
                     <div className="py-10">
                         <h1 className="mb-5 text-3xl font-bold">Search for Specific Article</h1>
-                        <form className='w-full'>
+                        <form className='w-full' onSubmit={handleSearch}>
                             <input type="search" name="search" placeholder='Search by Title' id="" className='mb-5 mr-2 p-2 rounded-l-xl text-black'  />
                             <input type="submit" value="Search" className='text-white rounded-r-xl p-2 bg-[#4A00FF]' />
                         </form>
@@ -60,18 +104,11 @@ const AllArticle = () => {
                             <Tab>International</Tab>
                             <Tab>Environment</Tab>
                         </TabList>
-                        <TabPanel><TabArticle items={all}></TabArticle></TabPanel>
-                        <TabPanel><TabArticle items={economy}></TabArticle></TabPanel>
-                        <TabPanel><TabArticle items={entertainment}></TabArticle></TabPanel>
-                        <TabPanel><TabArticle items={politics}></TabArticle></TabPanel>
-                        <TabPanel><TabArticle items={sports}></TabArticle></TabPanel>
-                        <TabPanel><TabArticle items={lifeStye}></TabArticle></TabPanel>
-                        <TabPanel><TabArticle items={technology}></TabArticle></TabPanel>
-                        <TabPanel><TabArticle items={international}></TabArticle></TabPanel>
-                        <TabPanel><TabArticle items={environment}></TabArticle></TabPanel>
+                        {getArticlesByTab(tabIndex)}
                     </Tabs>
                 </div>
             </div>
+
 
             
 
