@@ -3,9 +3,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination, } from 'swiper/modules';
+import { NavLink } from 'react-router-dom';
 
 const AllArticleOne = ({ item }) => {
-    const { NewsTitle, ShortDescription, PublisherName, PublishedDate, Image1, Image2, Package } = item
+    const {_id, NewsTitle, ShortDescription, PublisherName, PublishedDate, Image1, Image2, Package } = item
 
 
     return (
@@ -18,7 +19,7 @@ const AllArticleOne = ({ item }) => {
                     <p className='py-1'>Publisher: <span className='font-semibold'>{PublisherName}</span></p>
                     <p>Published Date: <span className='font-semibold'>{PublishedDate}</span></p>
                     <p className='py-1'>Status: <span className='font-semibold'>{Package}</span></p>
-                    <button className='btn btn-primary'>Click For Details</button>
+                    <NavLink to={`/all-articles/${_id}`}><button className='btn btn-primary'>Click For Details</button></NavLink>
                 </div>
                 <div className='w-1/2'>
                     <Swiper

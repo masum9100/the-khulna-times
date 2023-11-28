@@ -5,6 +5,7 @@ import Home from '../HomePage/Home';
 import Subscription from '../OtherPage/Subscription'
 import AllArticle from '../OtherPage/AllArticle';
 import PremiumArticle from '../OtherPage/PremiumArticle';
+import SingleNewsPage from '../OtherPage/SingleNewsPage';
 
 const NotFound = () => {
     return (
@@ -34,7 +35,12 @@ const route = createBrowserRouter([
             {
                 path: '/premium-article',
                 element: <PremiumArticle></PremiumArticle>
-            }
+            },
+            {
+                path: "/all-articles/:id",
+                element: <SingleNewsPage></SingleNewsPage>,
+                loader: ({params})=> fetch(`http://localhost:5001/news/${params.id}`)
+            },
             
             
             

@@ -4,7 +4,7 @@ const useNews = () => {
     const [news, setNews] = useState([])
     const [loading, setLoading] = useState(true)
     useEffect(() => {
-        fetch('data.json')
+        fetch('http://localhost:5001/news')
             .then(res => res.json())
             .then(data => {
                 setNews(data)
