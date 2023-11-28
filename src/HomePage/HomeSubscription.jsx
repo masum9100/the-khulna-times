@@ -9,8 +9,8 @@ const HomeSubscription = () => {
                     <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Free plan</h5>
                     <div className="flex items-baseline text-gray-900 dark:text-white">
                         <span className="text-3xl font-semibold">$</span>
-                        <span className="text-5xl font-extrabold tracking-tight">00.00</span>
-                        <span className="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/month</span>
+                        <span className="text-5xl font-extrabold tracking-tight">01.00</span>
+                        <span className="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/minute</span>
                     </div>
                     <ul role="list" className="space-y-5 my-7">
                         <li className="flex items-center">

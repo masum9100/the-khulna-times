@@ -5,6 +5,9 @@ const Subscription = () => {
     return (
         
         <div className='bg-gradient-to-b from-[#F9F4FC] to-[#EEE8FB] my-10 pb-10'>
+            <div>
+                <img src="https://i.ibb.co/jRXJNL1/Green-and-Peach-Modern-Dots-The-Latest-Gadget-Available-Banner.png" alt="" className=''/>
+            </div>
             <div className='max-w-screen-xl mx-auto'>
                 <div className='text-center py-10'>
                     <h1 className='text-2xl md:w-1/2 font-bold mx-auto '>Upgrade Your News Experience: Choose Your Access Level Today!</h1>
@@ -20,8 +23,8 @@ const Subscription = () => {
                             <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Free plan</h5>
                             <div className="flex items-baseline text-gray-900 dark:text-white">
                                 <span className="text-3xl font-semibold">$</span>
-                                <span className="text-5xl font-extrabold tracking-tight">00.00</span>
-                                <span className="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/month</span>
+                                <span className="text-5xl font-extrabold tracking-tight">01.00</span>
+                                <span className="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/minute</span>
                             </div>
                             <ul role="list" className="space-y-5 my-7">
                                 <li className="flex items-center">
