@@ -8,6 +8,7 @@ import PremiumArticle from '../OtherPage/PremiumArticle';
 import SingleNewsPage from '../OtherPage/SingleNewsPage';
 import Login from '../LoginSignup/Login';
 import Registration from '../LoginSignup/Registration';
+import PrivateRoute from '../FirebaseAuth/PrivateRoute';
 
 const NotFound = () => {
     return (
@@ -32,11 +33,11 @@ const route = createBrowserRouter([
             },
             {
                 path: '/subscription',
-                element: <Subscription></Subscription>
+                element: <PrivateRoute><Subscription></Subscription></PrivateRoute>
             },
             {
                 path: '/premium-article',
-                element: <PremiumArticle></PremiumArticle>
+                element: <PrivateRoute><PremiumArticle></PremiumArticle></PrivateRoute>
             },
             {
                 path: "/all-articles/:id",
