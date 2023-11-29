@@ -11,6 +11,7 @@ import Registration from '../LoginSignup/Registration';
 import PrivateRoute from '../FirebaseAuth/PrivateRoute';
 import AddArticle from '../UserPages/AddArticle';
 import MyArticle from '../UserPages/MyArticle';
+import UpdateMyArticle from '../UserPages/UpdateMyArticle';
 
 const NotFound = () => {
     return (
@@ -62,6 +63,11 @@ const route = createBrowserRouter([
                 path: '/my-article',
                 element: <PrivateRoute><MyArticle></MyArticle></PrivateRoute>,
                 loader: () => fetch('http://localhost:5001/newarticle')
+            },
+            {
+                path: '/update-my-article/:id',
+                element: <PrivateRoute><UpdateMyArticle></UpdateMyArticle></PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:5001/newarticle/${params.id}`)
             }
             
             

@@ -6,6 +6,7 @@ import { Autoplay, Pagination, } from 'swiper/modules';
 import { FaRegEdit } from "react-icons/fa";
 import { AiOutlineDelete } from "react-icons/ai";
 import Swal from 'sweetalert2';
+import { NavLink } from 'react-router-dom';
 
 const CardMyArticle = ({ myArticle }) => {
     const { _id, newsTitle, short_description, long_description, user_email, photo_url1, photo_url2, tag } = myArticle
@@ -57,7 +58,7 @@ const CardMyArticle = ({ myArticle }) => {
                             <p className='py-1'>Publisher Email: <span className='font-semibold'>{user_email}</span></p>
 
                             <div className='flex justify-center gap-2'>
-                                <button className='btn bg-green-800 text-white font-extrabold text-xl'><FaRegEdit></FaRegEdit></button>
+                                <NavLink to={`/update-my-article/${_id}`}><button className='btn bg-green-800 text-white font-extrabold text-xl'><FaRegEdit></FaRegEdit></button></NavLink>
                                 <button onClick={() => handleDelete(_id)} className='btn bg-red-800 text-white font-extrabold text-xl'><AiOutlineDelete></AiOutlineDelete></button>
                             </div>
                         </div>
