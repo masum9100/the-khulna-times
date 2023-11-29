@@ -62,7 +62,7 @@ const route = createBrowserRouter([
             {
                 path: '/my-article',
                 element: <PrivateRoute><MyArticle></MyArticle></PrivateRoute>,
-                loader: () => fetch('http://localhost:5001/newarticle')
+                // loader: () => fetch('http://localhost:5001/newarticle')
             },
             {
                 path: '/update-my-article/:id',

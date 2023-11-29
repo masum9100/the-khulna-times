@@ -12,6 +12,8 @@ const CardMyArticle = ({ myArticle }) => {
     const { _id, newsTitle, short_description, long_description, user_email, photo_url1, photo_url2, tag } = myArticle
     const [deleted, setDeleted] = useState(false)
 
+    
+
 
     const handleDelete = _id => {
         Swal.fire({
