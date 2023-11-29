@@ -82,7 +82,7 @@ const Registration = () => {
                                         {errors.password?.type === 'minLength' && <span className='text-red-400'>Use Min 6 Character</span>}
                                         {errors.password?.type === 'pattern' && <span className='text-red-400'>Use one uppercase letter, one lowercase letter, one number and special character.</span>}
                                     </div>
-                                    {/* <p className="text-red-500">{error}</p> */}
+                                   
                                     <div className="form-control mt-6">
 
                                         <input type="submit" value="Sign Up" className="py-2 rounded-md bg-[#4A00FF] text-white" />

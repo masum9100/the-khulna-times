@@ -9,6 +9,8 @@ import SingleNewsPage from '../OtherPage/SingleNewsPage';
 import Login from '../LoginSignup/Login';
 import Registration from '../LoginSignup/Registration';
 import PrivateRoute from '../FirebaseAuth/PrivateRoute';
+import AddArticle from '../UserPages/AddArticle';
+import MyArticle from '../UserPages/MyArticle';
 
 const NotFound = () => {
     return (
@@ -51,6 +53,15 @@ const route = createBrowserRouter([
             {
                 path: '/registration',
                 element: <Registration></Registration>
+            },
+            {
+                path: '/add-article',
+                element: <PrivateRoute><AddArticle></AddArticle></PrivateRoute>
+            },
+            {
+                path: '/my-article',
+                element: <PrivateRoute><MyArticle></MyArticle></PrivateRoute>,
+                loader: () => fetch('http://localhost:5001/newarticle')
             }
             
             
