@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../FirebaseAuth/AuthProvider';
 import Swal from 'sweetalert2';
 
@@ -9,21 +9,31 @@ import Swal from 'sweetalert2';
 
 const Registration = () => {
 
-    const { register, handleSubmit, watch, formState: { errors }, } = useForm()
-    const { signUp } = useContext(AuthContext)
+    const { register, handleSubmit, reset, watch, formState: { errors }, } = useForm()
+    const { signUp, updateUserProfile } = useContext(AuthContext)
+    const navigate = useNavigate()
 
 
 
-    const onSubmit = (data) => {
+    const onSubmit = data => {
         console.log(data)
         signUp(data.email, data.password)
             .then(result => {
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'You Register Successfully',
-                    icon: 'success',
-                    confirmButtonText: 'OKAY'
-                })
+                const loggedUser = result.user
+                console.log(loggedUser)
+                updateUserProfile(data.name, data.photoURL)
+                    .then(() => {
+                        console.log('hello update')
+                        reset()
+                        Swal.fire({
+                            title: 'Success!',
+                            text: 'You Register Successfully',
+                            icon: 'success',
+                            confirmButtonText: 'OKAY'
+                        })
+                    })
+                    navigate('/')
+
             }).catch((error) => {
                 console.error(error);
             })
@@ -82,7 +92,7 @@ const Registration = () => {
                                         {errors.password?.type === 'minLength' && <span className='text-red-400'>Use Min 6 Character</span>}
                                         {errors.password?.type === 'pattern' && <span className='text-red-400'>Use one uppercase letter, one lowercase letter, one number and special character.</span>}
                                     </div>
-                                   
+
                                     <div className="form-control mt-6">
 
                                         <input type="submit" value="Sign Up" className="py-2 rounded-md bg-[#4A00FF] text-white" />

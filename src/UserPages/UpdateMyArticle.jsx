@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -104,6 +105,9 @@ const UpdateMyArticle = () => {
                 </div>
                 <input type="submit" value="Update Article" className='w-1/2 bg-[#4A00FF] text-white text-xl font-bold py-3 rounded-lg mt-5 mx-auto flex justify-center' />
             </form>
+            <Helmet>
+                <title>The Khulna News | Update Article</title>
+            </Helmet>
         </div>
     );
 };

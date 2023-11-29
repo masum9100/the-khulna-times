@@ -9,10 +9,9 @@ import Swal from 'sweetalert2';
 import { NavLink } from 'react-router-dom';
 
 const CardMyArticle = ({ myArticle }) => {
-    const { _id, newsTitle, short_description, long_description, user_email, photo_url1, photo_url2, tag } = myArticle
+    const { _id, newsTitle, short_description, long_description, user_email, photo_url1, photo_url2, tag, package_status } = myArticle
     const [deleted, setDeleted] = useState(false)
 
-    
 
 
     const handleDelete = _id => {
@@ -47,45 +46,22 @@ const CardMyArticle = ({ myArticle }) => {
 
     }
     return (
-        <div className='max-w-screen-lg mx-auto h-96'>
+        <div className=''>
 
             {
                 deleted ? null : (
-                    <div className='flex justify-between p-4 border-black border-2 my-2'>
-                        <div>
-                            <h1 className='text-2xl font-bold'>Title: {newsTitle}</h1>
-                            <p className='text-gray-500'>Short Des: {short_description}</p>
-                            <hr />
-                            <p className=''>Long Des: {short_description}</p>
-                            <p className='py-1'>Publisher Email: <span className='font-semibold'>{user_email}</span></p>
-
-                            <div className='flex justify-center gap-2'>
-                                <NavLink to={`/update-my-article/${_id}`}><button className='btn bg-green-800 text-white font-extrabold text-xl'><FaRegEdit></FaRegEdit></button></NavLink>
-                                <button onClick={() => handleDelete(_id)} className='btn bg-red-800 text-white font-extrabold text-xl'><AiOutlineDelete></AiOutlineDelete></button>
-                            </div>
-                        </div>
-                        <div className='w-1/2'>
-                            <Swiper
-                                spaceBetween={30}
-                                centeredSlides={true}
-                                autoplay={{
-                                    delay: 2500,
-                                    disableOnInteraction: false,
-                                }}
-                                pagination={{
-                                    clickable: true,
-                                }}
-
-                                modules={[Autoplay, Pagination,]}
-                                className="mySwiper"
-                            >
-                                <SwiperSlide><img src={photo_url1} alt="" className='h-72' /></SwiperSlide>
-                                <SwiperSlide><img src={photo_url2} alt="" className='h-72' /></SwiperSlide>
-
-                            </Swiper>
-                        </div>
-
-                    </div>
+                    
+                    <tr>
+                        <th>1</th>
+                        <td><img src={photo_url1}  className='w-16 h-16' alt="" /></td>
+                        <td>{newsTitle}</td>
+                        <td>{short_description}</td>
+                        <td>{user_email}</td>
+                        <td>{package_status}</td>
+                        <td>Pending</td>
+                        <td><NavLink to={`/update-my-article/${_id}`}><button className='btn bg-green-800 text-white font-extrabold text-xl'><FaRegEdit></FaRegEdit></button></NavLink></td>
+                        <td><button onClick={() => handleDelete(_id)} className='btn bg-red-800 text-white font-extrabold text-xl'><AiOutlineDelete></AiOutlineDelete></button></td>
+                    </tr>
                 )
             }
         </div>
