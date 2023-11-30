@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import CardMyArticle from './CardMyArticle';
 import { AuthContext } from '../FirebaseAuth/AuthProvider';
 import { Helmet } from 'react-helmet-async';
-import cry from '../../public/cry.gif'
 
 
 const MyArticle = () => {
@@ -67,21 +66,15 @@ const MyArticle = () => {
                     </div>
                 ) : (
                     <div className="text-center my-5 relative">
-                        <img src={cry} alt="" className='mx-auto' />
-                        <div className='absolute bottom-10 left-0 right-0'>
-                            <p className='text-3xl font-bold text-yellow-600'>OPPS!</p>
-                            <p className='text-xl font-bold text-red-300'>You didn't booked any service yet</p>
+                        
+                        <div className=''>
+                            
+                            <p className='text-3xl font-bold text-red-500'>You didn't add any article yet</p>
                         </div>
 
                     </div>
                 )
             }
-
-
-            {/* {
-                myArticles.map(myArticle => <CardMyArticle key={myArticle._id} myArticle={myArticle}></CardMyArticle>)
-            } */}
-
         </div>
     );
 };

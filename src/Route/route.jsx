@@ -12,6 +12,10 @@ import PrivateRoute from '../FirebaseAuth/PrivateRoute';
 import AddArticle from '../UserPages/AddArticle';
 import MyArticle from '../UserPages/MyArticle';
 import UpdateMyArticle from '../UserPages/UpdateMyArticle';
+import Dashboard from '../Dashboard/Dashboard';
+import MyProfile from '../Dashboard/MyProfile';
+import AllUser from '../Dashboard/AllUser';
+import AddPublisher from '../Dashboard/AddPublisher';
 
 const NotFound = () => {
     return (
@@ -44,7 +48,7 @@ const route = createBrowserRouter([
             },
             {
                 path: "/all-articles/:id",
-                element: <SingleNewsPage></SingleNewsPage>,
+                element: <PrivateRoute><SingleNewsPage></SingleNewsPage></PrivateRoute>,
                 loader: ({params})=> fetch(`http://localhost:5001/news/${params.id}`)
             },
             {
@@ -72,6 +76,32 @@ const route = createBrowserRouter([
             
             
             
+        ]
+    },
+    {
+        path: '/dashboard',
+        element: <Dashboard></Dashboard>,
+        children: [
+            {
+                path: '/my-profile',
+                element: <MyProfile></MyProfile>
+            },
+            {
+                path: '/my article',
+                element: <MyArticle></MyArticle>
+            },
+            {
+                path: '/all-article',
+                element: <AllArticle></AllArticle>
+            },
+            {
+                path: '/all-user',
+                element: <AllUser></AllUser>
+            },
+            {
+                path: '/add-publisher',
+                element: <AddPublisher></AddPublisher>
+            }
         ]
     }
     
