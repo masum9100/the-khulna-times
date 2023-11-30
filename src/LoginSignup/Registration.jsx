@@ -4,35 +4,45 @@ import { useForm } from 'react-hook-form';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../FirebaseAuth/AuthProvider';
 import Swal from 'sweetalert2';
+import usePublicAxios from '../Hooks/usePublicAxios'
 
 
 
 const Registration = () => {
-
+    const axiosPublic = usePublicAxios()
     const { register, handleSubmit, reset, watch, formState: { errors }, } = useForm()
     const { signUp, updateUserProfile } = useContext(AuthContext)
     const navigate = useNavigate()
 
 
-
     const onSubmit = data => {
-        console.log(data)
         signUp(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user
                 console.log(loggedUser)
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        console.log('hello update')
-                        reset()
-                        Swal.fire({
-                            title: 'Success!',
-                            text: 'You Register Successfully',
-                            icon: 'success',
-                            confirmButtonText: 'OKAY'
-                        })
+                        const userInfo = {
+                            name: data.name,
+                            email: data.email,
+                            photoURL: data.photoURL
+                        }
+                        axiosPublic.post('/users', userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    reset()
+                                    Swal.fire({
+                                        title: 'Success!',
+                                        text: 'You Register Successfully',
+                                        icon: 'success',
+                                        confirmButtonText: 'OKAY'
+                                    })
+                                    navigate('/')
+                                }
+                            })
+
                     })
-                    navigate('/')
+                
 
             }).catch((error) => {
                 console.error(error);
