@@ -3,6 +3,7 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../FirebaseAuth/AuthProvider';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
+import usePublicAxios from '../Hooks/usePublicAxios';
 
 
 
@@ -11,11 +12,22 @@ const Login = () => {
     const location = useLocation()
     const navigate = useNavigate()
     const [error, setError]=useState("")
+    const axiosPubic = usePublicAxios()
 
     const handleGoogle = () => {
         googleSignIn().then(result => {
             console.log(result.user)
-            navigate(location?.state ? location.state : '/')
+            const userInfo = {
+                name: result.user?.displayName,
+                email: result.user?.email,
+                photoURL: result.user?.photoURL
+            }
+            axiosPubic.post('/users', userInfo)
+            .then(res =>{
+                console.log(res.data)
+                navigate(location?.state ? location.state : '/')
+            })
+            
         })
     }
 

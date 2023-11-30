@@ -3,6 +3,7 @@ import { FaRegEdit } from "react-icons/fa";
 import { AiOutlineDelete } from "react-icons/ai";
 import Swal from 'sweetalert2';
 import { NavLink } from 'react-router-dom';
+import { FaHandPointRight } from "react-icons/fa";
 
 const CardMyArticle = ({ myArticle }) => {
     const { _id, newsTitle, short_description, long_description, user_email, photo_url1, photo_url2, tag, package_status } = myArticle
@@ -43,7 +44,7 @@ const CardMyArticle = ({ myArticle }) => {
     }
     return (
         <tr>
-                        <th>1</th>
+                        <th className='text-xl'><FaHandPointRight></FaHandPointRight></th>
                         <td><img src={photo_url1}  className='w-16 h-16' alt="" /></td>
                         <td>{newsTitle}</td>
                         <td>{short_description}</td>

@@ -1,11 +1,11 @@
-import axios from 'axios';
+import axios from "axios";
 
 const axiosSecure = axios.create({
     baseURL: 'http://localhost:5001'
 })
 
-const useAxios = () => {
+const useSecureAxios = () => {
     return axiosSecure
 };
 
-export default useAxios;
+export default useSecureAxios;

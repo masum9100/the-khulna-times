@@ -3,6 +3,7 @@ import Swal from 'sweetalert2';
 import { AiOutlineDelete } from "react-icons/ai";
 import { IoMdCheckmark } from "react-icons/io";
 import { AiOutlineStop } from "react-icons/ai";
+import { FaHandPointRight } from "react-icons/fa";
 
 
 const AllArtTable = ({allArticle}) => {
@@ -62,7 +63,7 @@ const AllArtTable = ({allArticle}) => {
     }
     return (
         <tr>
-                        <th>1</th>
+                        <th className='text-xl'><FaHandPointRight></FaHandPointRight></th>
                         <td><img src={photo_url1}  className='w-16 h-16' alt="" /></td>
                         <td>{newsTitle}</td>
                         <td>{short_description}</td>

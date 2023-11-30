@@ -25,7 +25,7 @@ const AllArticleDash = () => {
                             </thead>
                             <tbody>
                                 {
-                                    allArticles.map(allArticle => <AllArtTable key={allArticle._id} allArticle={allArticle}></AllArtTable>)
+                                    allArticles.map((allArticle, index) => <AllArtTable key={allArticle._id} allArticle={allArticle}></AllArtTable>)
                                 }
                             </tbody>
                         </table>
