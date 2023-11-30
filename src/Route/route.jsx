@@ -16,6 +16,7 @@ import Dashboard from '../Dashboard/Dashboard';
 import MyProfile from '../Dashboard/MyProfile';
 import AllUser from '../Dashboard/AllUser';
 import AddPublisher from '../Dashboard/AddPublisher';
+import AllArticleDash from '../Dashboard/AllArticleDash';
 
 const NotFound = () => {
     return (
@@ -83,23 +84,24 @@ const route = createBrowserRouter([
         element: <Dashboard></Dashboard>,
         children: [
             {
-                path: '/my-profile',
+                path: 'my-profile',
                 element: <MyProfile></MyProfile>
             },
             {
-                path: '/my article',
+                path: 'my-article',
                 element: <MyArticle></MyArticle>
             },
             {
-                path: '/all-article',
-                element: <AllArticle></AllArticle>
+                path: 'all-article',
+                element: <AllArticleDash></AllArticleDash>,
+                loader: () => fetch('http://localhost:5001/newarticle')
             },
             {
-                path: '/all-user',
+                path: 'all-user',
                 element: <AllUser></AllUser>
             },
             {
-                path: '/add-publisher',
+                path: 'add-publisher',
                 element: <AddPublisher></AddPublisher>
             }
         ]

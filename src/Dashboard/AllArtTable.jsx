@@ -1,14 +1,33 @@
 import React, { useState } from 'react';
-import { FaRegEdit } from "react-icons/fa";
-import { AiOutlineDelete } from "react-icons/ai";
 import Swal from 'sweetalert2';
-import { NavLink } from 'react-router-dom';
+import { AiOutlineDelete } from "react-icons/ai";
+import { IoMdCheckmark } from "react-icons/io";
+import { AiOutlineStop } from "react-icons/ai";
 
-const CardMyArticle = ({ myArticle }) => {
-    const { _id, newsTitle, short_description, long_description, user_email, photo_url1, photo_url2, tag, package_status } = myArticle
+
+const AllArtTable = ({allArticle}) => {
+
+    const { _id, newsTitle, short_description, long_description, user_email, photo_url1, photo_url2, tag, package_status } = allArticle
     const [deleted, setDeleted] = useState(false)
 
-
+    const handeApprove = e =>{
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Article has been Approved ",
+            showConfirmButton: false,
+            timer: 1500
+          });
+    }
+    const handeReject = e =>{
+        Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "Article has been Rejected ",
+            showConfirmButton: false,
+            timer: 1500
+          });
+    }
 
     const handleDelete = _id => {
         Swal.fire({
@@ -49,11 +68,11 @@ const CardMyArticle = ({ myArticle }) => {
                         <td>{short_description}</td>
                         <td>{user_email}</td>
                         <td>{package_status}</td>
-                        <td>Pending</td>
-                        <td><NavLink to={`/update-my-article/${_id}`}><button className='btn bg-green-800 text-white font-extrabold text-xl'><FaRegEdit></FaRegEdit></button></NavLink></td>
+                        <td><button onClick={handeApprove} className='btn bg-green-800 text-white font-extrabold text-xl'><IoMdCheckmark></IoMdCheckmark></button></td>
+                        <td><button onClick={handeReject} className='btn bg-red-800 text-white font-extrabold text-xl'><AiOutlineStop></AiOutlineStop></button></td>
                         <td><button onClick={() => handleDelete(_id)} className='btn bg-red-800 text-white font-extrabold text-xl'><AiOutlineDelete></AiOutlineDelete></button></td>
                     </tr>
     );
 };
 
-export default CardMyArticle;
+export default AllArtTable;
