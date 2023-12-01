@@ -11,7 +11,7 @@ const AllUser = () => {
     const { data: user = [], refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await axiosSecure.get('/users')
+            const res = await axiosSecure.get('/users',)
             return res.data
         }
     })
@@ -63,6 +63,7 @@ const AllUser = () => {
     return (
         <div>
             <p className='text-2xl font-bold text-center'>Our Total User : <span className='text-[#4A00FF] font-extrabold text-3xl'>{user.length}</span></p>
+            <div className="divider divider-secondary mx-10"></div>
             <div>
                 <div className="overflow-x-auto">
                     <table className="table table-zebra">

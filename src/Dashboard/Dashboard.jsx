@@ -1,14 +1,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { NavLink, Outlet } from 'react-router-dom';
-import { CgProfile } from "react-icons/cg";
-import { TbArticle } from "react-icons/tb";
 import { GrArticle } from "react-icons/gr";
 import { GrGroup } from "react-icons/gr";
 import { GrUserAdd } from "react-icons/gr";
 import { IoHomeOutline } from "react-icons/io5";
+import useAdmin from '../Hooks/useAdmin';
 
 const Dashboard = () => {
+    const [isAdmin] = useAdmin()
     return (
         <div className='max-w-screen-xl mx-auto p-5 flex'>
             <div className='w-64 min-h-full bg-[#4A00FF]'>
