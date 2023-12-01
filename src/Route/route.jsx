@@ -13,10 +13,10 @@ import AddArticle from '../UserPages/AddArticle';
 import MyArticle from '../UserPages/MyArticle';
 import UpdateMyArticle from '../UserPages/UpdateMyArticle';
 import Dashboard from '../Dashboard/Dashboard';
-import MyProfile from '../Dashboard/MyProfile';
 import AllUser from '../Dashboard/AllUser';
 import AddPublisher from '../Dashboard/AddPublisher';
 import AllArticleDash from '../Dashboard/AllArticleDash';
+import MyProfile from '../UserPages/MyProfile';
 
 const NotFound = () => {
     return (
@@ -73,6 +73,10 @@ const route = createBrowserRouter([
                 path: '/update-my-article/:id',
                 element: <PrivateRoute><UpdateMyArticle></UpdateMyArticle></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5001/newarticle/${params.id}`)
+            },
+            {
+                path: '/my-profile',
+                element: <MyProfile></MyProfile>
             }
             
             

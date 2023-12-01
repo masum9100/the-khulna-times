@@ -42,10 +42,10 @@ const NavBar = () => {
                 </div>
                 <div className='text-center flex'>
                     <div>
-                        {user && <div className='grid grid-cols-1 justify-center'>
+                        {user && <NavLink to={'/my-profile'}><div className='grid grid-cols-1 justify-center'>
                             <img className='w-8 rounded-full mx-auto' src={user?.photoURL} alt="user" />
                             <p className="mr-1 text-black">{user?.displayName}</p>
-                        </div>}
+                        </div></NavLink>}
                     </div>
 
                     <div>
