@@ -43,9 +43,12 @@ const CardMyArticle = ({ myArticle }) => {
 
     }
     return (
-        <tr>
+        <>
+            {
+                deleted ? null : (
+                    <tr>
                         <th className='text-xl'><FaHandPointRight></FaHandPointRight></th>
-                        <td><img src={photo_url1}  className='w-16 h-16' alt="" /></td>
+                        <td><img src={photo_url1} className='w-16 h-16' alt="" /></td>
                         <td>{newsTitle}</td>
                         <td>{short_description}</td>
                         <td>{user_email}</td>
@@ -54,6 +57,9 @@ const CardMyArticle = ({ myArticle }) => {
                         <td><NavLink to={`/update-my-article/${_id}`}><button className='btn bg-green-800 text-white font-extrabold text-xl'><FaRegEdit></FaRegEdit></button></NavLink></td>
                         <td><button onClick={() => handleDelete(_id)} className='btn bg-red-800 text-white font-extrabold text-xl'><AiOutlineDelete></AiOutlineDelete></button></td>
                     </tr>
+                )
+            }
+        </>
     );
 };
 
