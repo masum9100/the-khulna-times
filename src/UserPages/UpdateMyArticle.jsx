@@ -22,7 +22,7 @@ const UpdateMyArticle = () => {
         const updateArticle = { newsTitle, short_description, long_description, user_email, photo_url1, photo_url2, tag }
         console.log(updateArticle)
 
-        fetch(`http://localhost:5001/newarticle/${_id}`, {
+        fetch(`https://agn12ss-masum9100.vercel.app/newarticle/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

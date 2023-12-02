@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosPubic = axios.create({
-    baseURL: 'http://localhost:5001'
+    baseURL: 'https://agn12ss-masum9100.vercel.app'
 })
 
 const usePublicAxios = () => {

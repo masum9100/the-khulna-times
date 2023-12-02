@@ -41,7 +41,7 @@ const AllArtTable = ({ allArticle }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5001/newarticle/${_id}`, {
+                fetch(`https://agn12ss-masum9100.vercel.app/newarticle/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

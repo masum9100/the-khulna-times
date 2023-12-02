@@ -4,7 +4,7 @@ const useNews = () => {
     const [news, setNews] = useState([])
     const [loading, setLoading] = useState(true)
     useEffect(() => {
-        fetch('http://localhost:5001/news')
+        fetch('https://agn12ss-masum9100.vercel.app/news')
             .then(res => res.json())
             .then(data => {
                 setNews(data)

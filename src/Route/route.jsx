@@ -50,7 +50,7 @@ const route = createBrowserRouter([
             {
                 path: "/all-articles/:id",
                 element: <PrivateRoute><SingleNewsPage></SingleNewsPage></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5001/news/${params.id}`)
+                loader: ({params})=> fetch(`https://agn12ss-masum9100.vercel.app/news/${params.id}`)
             },
             {
                 path: '/login',
@@ -67,16 +67,20 @@ const route = createBrowserRouter([
             {
                 path: '/my-article',
                 element: <PrivateRoute><MyArticle></MyArticle></PrivateRoute>,
-                // loader: () => fetch('http://localhost:5001/newarticle')
+                // loader: () => fetch('https://agn12ss-masum9100.vercel.app/newarticle')
             },
             {
                 path: '/update-my-article/:id',
                 element: <PrivateRoute><UpdateMyArticle></UpdateMyArticle></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5001/newarticle/${params.id}`)
+                loader: ({params}) => fetch(`https://agn12ss-masum9100.vercel.app/newarticle/${params.id}`)
             },
             {
                 path: '/my-profile',
                 element: <MyProfile></MyProfile>
+            },
+            {
+                path: "*",
+                element: <NotFound></NotFound>
             }
             
             
@@ -91,7 +95,7 @@ const route = createBrowserRouter([
             {
                 path: 'all-article',
                 element: <AllArticleDash></AllArticleDash>,
-                loader: () => fetch('http://localhost:5001/newarticle')
+                loader: () => fetch('https://agn12ss-masum9100.vercel.app/newarticle')
             },
             {
                 path: 'all-user',

@@ -22,7 +22,7 @@ const AddArticle = () => {
         const newArticle = { newsTitle, short_description, long_description, user_email, photo_url1, photo_url2, package_status, tag: selectedTag }
         console.log(newArticle)
 
-        fetch('http://localhost:5001/newarticle', {
+        fetch('https://agn12ss-masum9100.vercel.app/newarticle', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

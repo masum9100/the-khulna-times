@@ -12,7 +12,7 @@ const MyArticle = () => {
 
     useEffect(() => {
         if (!loading) {
-            const url = `http://localhost:5001/newarticle/?user_email=${user.email}`
+            const url = `https://agn12ss-masum9100.vercel.app/newarticle/?user_email=${user.email}`
             fetch(url)
                 .then(res => res.json())
                 .then(data => setMyArticles(data))
